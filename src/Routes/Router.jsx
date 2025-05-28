@@ -10,6 +10,7 @@ import LoginPage from "../Pages/LoginPage";
 import HomePage from "../Pages/HomePage";
 import AddTouristSpot from "../Pages/AddTouristSpot";
 import ProtectedRoute from "./ProtectedRoute";
+import AllTouristSpot from "../Pages/AllTouristSpot";
 
 
 const router = createBrowserRouter([
@@ -32,7 +33,13 @@ const router = createBrowserRouter([
         {
           path:'/addTouristSpot',
           element:<ProtectedRoute><AddTouristSpot></AddTouristSpot></ProtectedRoute>
+        },
+        {
+          path:'/allTouristSpot',
+          element:<AllTouristSpot></AllTouristSpot>,
+          loader:()=>fetch(`http://localhost:5000/touristSpot`)
         }
+
     ]
     
   },
