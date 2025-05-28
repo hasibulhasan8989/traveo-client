@@ -8,6 +8,8 @@ import MainPage from "../Pages/MainPage";
 import RegisterPage from "../Pages/RegisterPage";
 import LoginPage from "../Pages/LoginPage";
 import HomePage from "../Pages/HomePage";
+import AddTouristSpot from "../Pages/AddTouristSpot";
+import ProtectedRoute from "./ProtectedRoute";
 
 
 const router = createBrowserRouter([
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
         {
             path:'/login',
             element:<LoginPage></LoginPage>
+        },
+        {
+          path:'/addTouristSpot',
+          element:<ProtectedRoute><AddTouristSpot></AddTouristSpot></ProtectedRoute>
         }
     ]
     

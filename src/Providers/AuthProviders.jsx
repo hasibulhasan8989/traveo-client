@@ -18,36 +18,46 @@ const AuthProviders = ({ children }) => {
   const githubProvider = new GithubAuthProvider();
 
   const [user,setUser]=useState(null)
+  const [loading,setLoading]=useState(true)
 
   const registerWithEmail = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const googleRegister = () => {
+    setLoading(true)
     return signInWithPopup(auth, googleProvider);
   };
 
   const githubRegister = () => {
+    setLoading(true)
     return signInWithPopup(auth, githubProvider);
   };
 
   const logIn = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
    const logout=()=>{
+    setLoading(true)
     return signOut(auth)
    }
   
 
+
+
   useEffect(() => {
-   const unsubscribe= onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser)
-      }
-      return ()=> unsubscribe()
-    });
-  }, []);
+  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+    setLoading(false);
+  });
+
+ 
+  return () => unsubscribe();
+}, []);
+
 
 
   const authCollection = {
@@ -57,7 +67,8 @@ const AuthProviders = ({ children }) => {
     githubRegister,
     user,
     setUser,
-    logout
+    logout,
+    loading
   };
 
   return (

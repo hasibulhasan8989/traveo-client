@@ -7,13 +7,13 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink>Home</NavLink>
+        <NavLink to='/'>Home</NavLink>
       </li>
       <li>
         <NavLink>All Tourists Spot</NavLink>
       </li>
       <li>
-        <NavLink>Add Tourists Spot</NavLink>
+        <NavLink to='/addTouristSpot'>Add Tourists Spot</NavLink>
       </li>
       <li>
         <NavLink>My List</NavLink>
@@ -33,7 +33,7 @@ const Navbar = () => {
       });
   };
 
-  console.log(user)
+
 
   return (
     <div className="navbar bg-base-100  ">
