@@ -8,7 +8,8 @@ const PlaceCart = ({ spot }) => {
     totalVisitorsPerYear,
     travel_time,
     seasonality,
-    image
+    image,
+    _id
   } = spot;
   return (
     <div className="card shadow-2xl p-6 bg-[#CAE8BD]">
@@ -27,7 +28,7 @@ const PlaceCart = ({ spot }) => {
         <p className="text-lg font-semibold ">Travel Time : <span className="font-normal" >{travel_time}</span> </p>
         <p className="text-lg font-semibold ">Seasonality : <span className="font-normal"> {seasonality} </span> </p>
 
-        <Link to='/viewDetails'><button className="btn btn-neutral">View Details</button> </Link>
+        <Link to={`/viewDetails/${_id}`}><button className="btn btn-neutral">View Details</button> </Link>
       
       </div>
     </div>

@@ -4,6 +4,11 @@ import logo from "../assets/image.png";
 import { AuthContext } from "../Providers/AuthProviders";
 
 const Navbar = () => {
+
+   const { user, logout ,setUser} = useContext(AuthContext);
+  console.log(user)
+
+  
   const navLinks = (
     <>
       <li>
@@ -16,12 +21,12 @@ const Navbar = () => {
         <NavLink to='/addTouristSpot'>Add Tourists Spot</NavLink>
       </li>
       <li>
-        <NavLink>My List</NavLink>
+        <NavLink to={`/myList/${user.email}`}>My List</NavLink>
       </li>
     </>
   );
 
-  const { user, logout ,setUser} = useContext(AuthContext);
+ 
 
   const handleLogOut = () => {
     logout()
