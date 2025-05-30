@@ -22,6 +22,9 @@ const Navbar = () => {
       <li>
         <NavLink to={`/myList/${user?.email}`}>My List</NavLink>
       </li>
+      <li>
+        <NavLink to={`/addCountry`}>Add Country</NavLink>
+      </li>
     </>
   );
 
@@ -64,7 +67,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="w-12 " />
+          <Link to={'/'}><img src={logo} alt="logo" className="w-12 rounded-full " /></Link>
           <Link className=" text-4xl font-bold eb-garamond">Traveo</Link>
         </div>
       </div>
@@ -72,6 +75,8 @@ const Navbar = () => {
         <ul className="menu menu-horizontal text-lg px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end space-x-4">
+
+        
         {user ? (
           <>
             <div
@@ -100,6 +105,7 @@ const Navbar = () => {
             </Link>
           </>
         )}
+        <input type="checkbox" value="luxury" className="toggle theme-controller" />
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ import ViewDetails from "../Pages/ViewDetails";
 import MyList from "../Pages/MyList";
 import UpdatePage from "../Pages/UpdatePage";
 import ErrorElement from "../Pages/ErrorElement";
+import AddCountry from "../Pages/AddCountry";
 
 
 
@@ -26,7 +27,9 @@ const router = createBrowserRouter([
     children:[
         {
             path:'/',
-            element:<HomePage></HomePage>
+            element:<HomePage></HomePage>,
+            loader:()=>fetch(`http://localhost:5000/country`)
+            
         },
         {
             path:'/register',
@@ -62,6 +65,15 @@ const router = createBrowserRouter([
           path:'/update/:id',
           element:<ProtectedRoute> <UpdatePage></UpdatePage> </ProtectedRoute>,
           loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
+        },
+        {
+           path:'/addCountry',
+           element:<ProtectedRoute><AddCountry></AddCountry></ProtectedRoute>
+        },
+        {
+          path:'/tourPlaces/:cname',
+          element:<AllTouristSpot></AllTouristSpot>,
+          loader:({params})=>fetch(`http://localhost:5000/tourPlaces/${params.cname}`)
         }
 
 

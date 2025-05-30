@@ -41,7 +41,7 @@ const ViewDetails = () => {
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-lg leading-relaxed">{description}</p>
+      <p className="mt-4 text-lg leading-relaxed text-amber-500">{description}</p>
 
       {/* Map Embed */}
       <div className="mt-8">
@@ -59,7 +59,7 @@ const ViewDetails = () => {
                <label>Country</label>
             </div>
             
-            <h1 className="text-xl mt-2 ">{country_Name}</h1>
+            <h1 className="text-xl mt-2  text-amber-500">{country_Name}</h1>
         </div>
 
         <div>
@@ -68,7 +68,7 @@ const ViewDetails = () => {
                <label>Average Cost</label>
             </div>
             
-            <h1 className="text-xl mt-2 ">{average_cost}</h1>
+            <h1 className="text-xl mt-2 text-amber-500">{average_cost}</h1>
         </div>
 
 
@@ -80,7 +80,7 @@ const ViewDetails = () => {
                <label>Seasonality</label>
             </div>
             
-            <h1 className="text-xl mt-2 ">{seasonality}</h1>
+            <h1 className="text-xl mt-2 text-amber-500 ">{seasonality}</h1>
         </div>
 
         <div className="">
@@ -89,7 +89,7 @@ const ViewDetails = () => {
                <label>Travel Time</label>
             </div>
             
-            <h1 className="text-xl mt-2 ">{travel_time}</h1>
+            <h1 className="text-xl mt-2 text-amber-500">{travel_time}</h1>
         </div>
         <div className="">
             <div className=" flex items-center gap-2 text-2xl text-green-500 font-bold">
@@ -97,7 +97,7 @@ const ViewDetails = () => {
                <label>Total Visitor</label>
             </div>
             
-            <h1 className="text-xl mt-2 ">{totalVisitorsPerYear}</h1>
+            <h1 className="text-xl mt-2 text-amber-500 ">{totalVisitorsPerYear}</h1>
         </div>
        
        

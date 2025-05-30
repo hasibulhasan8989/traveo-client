@@ -7,7 +7,8 @@ const Carousel = () => {
   <div id="slide1" className="carousel-item relative w-full">
     <img
       src="
-      https://i.ibb.co/G48Mc8x9/ilyuza-mingazova-Aa-HH2-WWD7-FM-unsplash-1.jpg"
+      
+      https://image.vietnam.travel/sites/default/files/2022-12/shutterstock_1939037803_0.jpg?v=1747817729"
       className="w-full" />
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
       <a href="#slide4" className="btn btn-circle">❮</a>
@@ -16,7 +17,7 @@ const Carousel = () => {
   </div>
   <div id="slide2" className="carousel-item relative w-full">
     <img
-      src="https://i.ibb.co/60gZ5pK0/daniil-silantev-X-a-J5-W-l-VXs-unsp.jpg"
+      src="https://assets-news.housing.com/news/wp-content/uploads/2022/08/18174406/bangladesh-places-to-visit-FEATURE-compressed.jpg"
       className="w-full" />
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
       <a href="#slide1" className="btn btn-circle">❮</a>
@@ -25,7 +26,7 @@ const Carousel = () => {
   </div>
   <div id="slide3" className="carousel-item relative w-full">
     <img
-      src="https://i.ibb.co/4nQMVrqj/ivo-sousa-martins-Rgi-ULee-LUMQ-un.jpg"
+      src="https://cdn.forevervacation.com/uploads/blog/where-is-ho-chi-minh-city-2554.jpg"
       className="w-full" />
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
       <a href="#slide2" className="btn btn-circle">❮</a>
@@ -34,7 +35,7 @@ const Carousel = () => {
   </div>
   <div id="slide4" className="carousel-item relative w-full">
     <img
-      src="https://i.ibb.co/qMvnYgpG/ilyuza-mingazova-8-ZD0oi-Nwpto-unsplash-1.jpg"
+      src="https://cdn.britannica.com/21/94521-050-247416DA/Ho-Chi-Minh-City-Peoples-Committee-Building.jpg"
       className="w-full" />
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
       <a href="#slide3" className="btn btn-circle">❮</a>
