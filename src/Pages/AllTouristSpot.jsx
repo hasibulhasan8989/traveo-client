@@ -7,6 +7,12 @@ import { useState } from 'react';
 const AllTouristSpot = () => {
     const loadedData=useLoaderData()
     const [places,setPlaces]=useState(loadedData)
+   
+
+    const handleSorting=()=>{
+        const sortedPlaces=[...places].sort((a,b)=>a.average_cost-b.average_cost)
+        setPlaces(sortedPlaces)
+    }
 
     if(loadedData.length===0){
         return(
@@ -22,15 +28,15 @@ const AllTouristSpot = () => {
             </div>
         )
     }
-    console.log(loadedData)
+   
     return (
         <div className='min-h-[600px] my-18 flex flex-col items-center '>
 
-            <button className='btn bg-amber-500 mb-10'>Low to high</button>
+            <button onClick={handleSorting} className='btn bg-amber-500 mb-10'>Low to high</button>
             <div className='grid  md:grid-cols-4  gap-5'>
                 {
                 places.map(spot=><PlaceCart key={spot._id} spot={spot} ></PlaceCart>)
-            }
+                }
             </div>
 
             

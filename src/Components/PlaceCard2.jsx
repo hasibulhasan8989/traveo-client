@@ -20,7 +20,7 @@ const PlaceCard2 = ({spot}) => {
 
         <div className="flex justify-between items-center mt-4">
           <span className="text-gray-500 text-sm">From</span>
-          <span className="text-orange-500 font-bold text-xl">{spot.average_cost
+          <span className="text-orange-500 font-bold text-xl"> ${spot.average_cost
 }</span>
         </div>
       </div>
