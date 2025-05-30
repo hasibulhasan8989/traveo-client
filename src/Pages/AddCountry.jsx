@@ -13,7 +13,7 @@ const AddCountry = () => {
         const country={country_name,image,description}
        
 
-        fetch(`http://localhost:5000/country`,{
+        fetch(`https://traveo-server.onrender.com/country`,{
             method:'POST',
             headers:{
                 'content-type':'application/json'

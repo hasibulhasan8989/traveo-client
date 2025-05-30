@@ -38,7 +38,7 @@ const AddTouristSpot = () => {
 
     console.log(newTouristSpot);
     console.log(user);
-    fetch(`http://localhost:5000/touristSpot`, {
+    fetch(`https://traveo-server.onrender.com/touristSpot`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

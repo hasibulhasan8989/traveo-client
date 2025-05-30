@@ -46,7 +46,7 @@ const handleUpdateSpot=e=>{
       description,
     };
 
-    fetch(`http://localhost:5000/update/${_id}`,{
+    fetch(`https://traveo-server.onrender.com/update/${_id}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'

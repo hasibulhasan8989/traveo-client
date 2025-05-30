@@ -18,7 +18,7 @@ const MyList = () => {
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/touristSpot/${id}`, {
+      fetch(`https://traveo-server.onrender.com/touristSpot/${id}`, {
         method: "DELETE"
       })
         .then((res) => res.json())

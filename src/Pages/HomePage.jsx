@@ -12,7 +12,7 @@ const HomePage = () => {
   const [spots,setSpot]=useState([])
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/touristSpot`)
+    fetch(`https://traveo-server.onrender.com/touristSpot`)
     .then(res=>res.json())
     .then(data=>{
       setSpot(data)

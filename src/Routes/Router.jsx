@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<HomePage></HomePage>,
-            loader:()=>fetch(`http://localhost:5000/country`)
+            loader:()=>fetch(`https://traveo-server.onrender.com/country`)
             
         },
         {
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
         {
           path:'/allTouristSpot',
           element:<AllTouristSpot></AllTouristSpot>,
-          loader:()=>fetch(`http://localhost:5000/touristSpot`)
+          loader:()=>fetch(`https://traveo-server.onrender.com/touristSpot`)
         },
         {
           path:`/viewDetails/:id`,
           element:<ProtectedRoute><ViewDetails></ViewDetails></ProtectedRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
+          loader:({params})=>fetch(`https://traveo-server.onrender.com/viewDetails/${params.id}`)
           
           
         },
@@ -59,12 +59,12 @@ const router = createBrowserRouter([
         {
           path:"/myList/:email",
           element:<ProtectedRoute> <MyList></MyList> </ProtectedRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/myList/${params.email}`)
+          loader:({params})=>fetch(`https://traveo-server.onrender.com/myList/${params.email}`)
         },
         {
           path:'/update/:id',
           element:<ProtectedRoute> <UpdatePage></UpdatePage> </ProtectedRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
+          loader:({params})=>fetch(`https://traveo-server.onrender.com/viewDetails/${params.id}`)
         },
         {
            path:'/addCountry',
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         {
           path:'/tourPlaces/:cname',
           element:<AllTouristSpot></AllTouristSpot>,
-          loader:({params})=>fetch(`http://localhost:5000/tourPlaces/${params.cname}`)
+          loader:({params})=>fetch(`https://traveo-server.onrender.com/tourPlaces/${params.cname}`)
         }
 
 
