@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
@@ -45,6 +46,12 @@ const AuthProviders = ({ children }) => {
     return signOut(auth)
    }
   
+   const updateUser =(name,image)=>{
+   return    updateProfile(auth.currentUser,{
+      displayName:name,
+      photoURL:image
+    })
+   }
 
 
 
@@ -68,7 +75,8 @@ const AuthProviders = ({ children }) => {
     user,
     setUser,
     logout,
-    loading
+    loading,
+    updateUser
   };
 
   return (

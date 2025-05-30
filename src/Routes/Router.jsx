@@ -12,6 +12,9 @@ import AddTouristSpot from "../Pages/AddTouristSpot";
 import ProtectedRoute from "./ProtectedRoute";
 import AllTouristSpot from "../Pages/AllTouristSpot";
 import ViewDetails from "../Pages/ViewDetails";
+import MyList from "../Pages/MyList";
+import UpdatePage from "../Pages/UpdatePage";
+import ErrorElement from "../Pages/ErrorElement";
 
 
 
@@ -19,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage></MainPage>,
+    errorElement:<ErrorElement></ErrorElement>,
     children:[
         {
             path:'/',
@@ -47,7 +51,20 @@ const router = createBrowserRouter([
           loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
           
           
+        },
+
+        {
+          path:"/myList/:email",
+          element:<ProtectedRoute> <MyList></MyList> </ProtectedRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/myList/${params.email}`)
+        },
+        {
+          path:'/update/:id',
+          element:<ProtectedRoute> <UpdatePage></UpdatePage> </ProtectedRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
         }
+
+
         
 
     ]

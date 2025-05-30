@@ -1,44 +1,39 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/image.png";
 import { AuthContext } from "../Providers/AuthProviders";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
+  const { user, logout, setUser } = useContext(AuthContext);
+  console.log(user);
 
-   const { user, logout ,setUser} = useContext(AuthContext);
-  console.log(user)
-
-  
   const navLinks = (
     <>
       <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to='/allTouristSpot'>All Tourists Spot</NavLink>
+        <NavLink to="/allTouristSpot">All Tourists Spot</NavLink>
       </li>
       <li>
-        <NavLink to='/addTouristSpot'>Add Tourists Spot</NavLink>
+        <NavLink to="/addTouristSpot">Add Tourists Spot</NavLink>
       </li>
       <li>
-        <NavLink to={`/myList/${user.email}`}>My List</NavLink>
+        <NavLink to={`/myList/${user?.email}`}>My List</NavLink>
       </li>
     </>
   );
 
- 
-
   const handleLogOut = () => {
     logout()
       .then(() => {
-        setUser(null)
+        setUser(null);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
-
 
   return (
     <div className="navbar bg-base-100  ">
@@ -77,15 +72,25 @@ const Navbar = () => {
         <ul className="menu menu-horizontal text-lg px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end space-x-4">
-        {user ? <>
-        <img src={user?.photoURL}  className={`w-12 rounded-full `} alt="" />
-        <p title={user.displayName}>{user?.email}</p>
-          <button onClick={handleLogOut} className="btn btn-error text-lg">
-            Logout
-          </button>
-        </>
-          
-        : (
+        {user ? (
+          <>
+            <div
+              className="tooltip tooltip-secondary"
+              data-tip={user.displayName}
+            >
+              <img
+               
+                src={user?.photoURL || <FaUser></FaUser>}
+                className={`w-12 rounded-full hover:scale-110  `}
+                alt=""
+              />
+            </div>
+
+            <button onClick={handleLogOut} className="btn btn-error text-lg">
+              Logout
+            </button>
+          </>
+        ) : (
           <>
             <Link to="/login">
               <button className="btn btn-secondary text-lg">Login</button>

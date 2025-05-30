@@ -6,15 +6,16 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
-  const { registerWithEmail } = useContext(AuthContext);
+  const { registerWithEmail ,updateUser} = useContext(AuthContext);
   // const [passError,setPassError]=useState('')
 
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
-
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+    
     if(password.length<6){
       toast.error("Must be at least 6 characters long ")
       return;
@@ -32,7 +33,17 @@ const RegisterPage = () => {
 
     registerWithEmail(email, password)
       .then(() => {
-        toast.success("User Created Successfully");
+           
+        updateUser(name,image)
+        .then(()=>{
+           toast.success("User Created Successfully");
+        })
+         .catch((error=>{
+          console.log(error)
+         }))
+       
+
+        
       })
       .catch((error) => {
         const message = error.message;
@@ -70,7 +81,7 @@ const RegisterPage = () => {
           <label className="font-bold text-lg">Photo URL :</label>
           <input
             type="text"
-            name="photoURL"
+            name="image"
             className="input w-full my-3"
             placeholder="PhotoURL"
           />
