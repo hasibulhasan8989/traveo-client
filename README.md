@@ -1,6 +1,7 @@
 # React + Vite
 
-live site : https://traveo-client.web.app/
+live site : https://traveo-client.web.app/  Note: Please wait some time to load from the server deployment site
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
